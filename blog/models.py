@@ -16,7 +16,7 @@ def validate_file_extention(value):
 class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     avatar = models.FileField(upload_to='file/user_avatar/', validators=[validate_file_extention])
-    dexcription = models.CharField(max_length=300)
+    description = models.CharField(max_length=300)
 
 
 class Article(models.Model):
@@ -25,11 +25,11 @@ class Article(models.Model):
     content = RichTextField()
     creste_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    author = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
-
+    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    promote = models.BooleanField(default=False)
     def __str__(self):
         return self.title
-        
+
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
