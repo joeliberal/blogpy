@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #app
-    'blog.apps.BlogConfig',
+    'blog',
+    #api
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT =BASE_DIR/'statiic'
+STATIC_ROOT =BASE_DIR/'statiic/'
+
+STATICFIELS_URL = [
+    BASE_DIR/'assert/'
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media/'
+
+
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"

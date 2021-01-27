@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-from ckeditor.fields import RichTextField
+#from ckeditor.fields import RichTextField
 
 
 def validate_file_extention(value):
@@ -22,7 +22,7 @@ class UserProfile(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=120)
     cover = models.FileField(upload_to='file/article_cover/', validators=[validate_file_extention])
-    content = RichTextField()
+    content = models.CharField(max_length=499)
     creste_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
