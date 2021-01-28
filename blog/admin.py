@@ -14,4 +14,3 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Article)
-
