@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o$x&um@opg)jn49j+$2*4%_4$v%ke_=*lxljd#%@b30me4$z^#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER':'postgres',
         'PASSWORD':'postgres',
-        'HOST':'localhost',
+        'HOST':'blogpy_ostgresql',
         'PORT':'5432',
     }
 }
@@ -126,11 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT =BASE_DIR/'statiic/'
+STATIC_ROOT =BASE_DIR/'static/'
 
-STATICFIELS_URL = [
-    BASE_DIR/'assert/'
-]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media/'
