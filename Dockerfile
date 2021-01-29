@@ -8,7 +8,7 @@ RUN mkdir /blogpy
 WORKDIR /blogpy
 COPY . /blogpy
 
-ADD requirment.txt /blogpy
+ADD requierment.txt /blogpy
 RUN pip install --upgrade pip
 RUN pip install -r requierment.txt
 
